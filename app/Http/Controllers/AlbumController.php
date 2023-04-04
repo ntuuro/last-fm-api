@@ -44,7 +44,8 @@ class AlbumController extends Controller
                 $artist_name = $request->input('artist_name');
                 $album_name = $request->input('album_name');
                 $album_url = $request->input('album_url');
-                $google_id = Auth::user()->google_id; 
+                // $google_id = Auth::user()->google_id; 
+                $google_id = '104642348109057475179'; 
 
                     $app = new Album();
                     $app->artist_name = $artist_name;

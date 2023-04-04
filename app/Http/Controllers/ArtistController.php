@@ -69,7 +69,8 @@ class ArtistController extends Controller
         // If validation passes, save the data to the database and return a success response
         } else {
             $mbid = $request->input('mbid');
-            $google_id = Auth::user()->google_id; 
+            // $google_id = Auth::user()->google_id; 
+            $google_id = '104642348109057475179'; 
 
             $app = new Artist;
             $app->mbid = $mbid;

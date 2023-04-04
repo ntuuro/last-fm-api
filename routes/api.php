@@ -23,10 +23,10 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::group(['middleware' => ['web']], function () {
+// Route::group(['middleware' => ['web']], function () {
     Route::get('auth', [AuthController::class, 'redirectToAuth']);
     Route::get('auth/callback', [AuthController::class, 'handleAuthCallback']);
-});
+// });
 
 
 // Artist Routes
@@ -54,7 +54,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('albums', [AlbumController::class, 'getTopAlbums']);
 
 
-Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
+// Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {;
     // Logout Route
     Route::get('logout', [AuthController::class, 'logout']);
 
@@ -73,4 +73,4 @@ Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
     Route::get('savedArtists', [ProfileController::class, 'favorateArtists']);
     Route::get('savedAlbums', [ProfileController::class, 'favorateAlbums']);
 
-  });
+//   });
