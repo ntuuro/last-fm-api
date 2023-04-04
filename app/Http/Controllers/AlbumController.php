@@ -22,15 +22,6 @@ class AlbumController extends Controller
     ]);
     }
 
-
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
     /**
      * Show the form for creating a new resource.
      */
@@ -66,14 +57,6 @@ class AlbumController extends Controller
                     'message' => 'Album added to favorite'], 201);
             }
         }
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(StoreAlbumRequest $request)
-    {
-        //
     }
 
     /**
@@ -122,22 +105,6 @@ class AlbumController extends Controller
         }
 
         return response()->json(['success' => true, 'payload' => $album]);
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Album $album)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateAlbumRequest $request, Album $album)
-    {
-        //
     }
 
     /**
