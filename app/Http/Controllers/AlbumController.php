@@ -107,6 +107,26 @@ class AlbumController extends Controller
         return response()->json(['success' => true, 'payload' => $album]);
     }
 
+    // Get user's top albums
+    public function getTopAlbums()
+    {
+        $promises = [
+            $this->client->getAsync('?method=user.getTopAlbums&api_key=' . env('LAST_FM_API_KEY').'&user='. env('LAST_FM_USER') . '&format=json'),
+        ];
+        
+        $responses = \GuzzleHttp\Promise\Utils::settle(
+            \GuzzleHttp\Promise\Utils::unwrap($promises),
+        )->wait();
+        
+        $albums = json_decode($responses[0]['value']->getBody()->getContents(), true);
+
+        if (!$albums) {
+            return response()->json(['success' => false, 'message' => 'Album does not exist']);
+        }
+
+        return response()->json(['success' => true, 'payload' => $albums]);
+    }
+
     /**
      * Remove the specified resource from storage.
      */

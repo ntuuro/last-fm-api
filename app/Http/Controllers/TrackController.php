@@ -61,7 +61,7 @@ class TrackController extends Controller
     public function search($name)
     {
         $promise = [
-            $this->client->getAsync('?method=track.search&api_key='. env('LAST_FM_API_KEY').'&track='.$name.'&format=json&limit=20'),
+            $this->client->getAsync('?method=track.search&api_key='. env('LAST_FM_API_KEY').'&track='.$name.'&format=json'),
         ];
         
         $response = \GuzzleHttp\Promise\Utils::settle(

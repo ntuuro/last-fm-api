@@ -50,6 +50,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('album/search/{name}', [AlbumController::class, 'search']);
     // Get Single Album of an artist
     Route::get('album/{name}/{artist}', [AlbumController::class, 'show']);
+    // Get User's albims
+    Route::get('albums', [AlbumController::class, 'getTopAlbums']);
 
 
 Route::group(['middleware' => ['auth:sanctum', 'verified']], function() {
