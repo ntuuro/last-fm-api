@@ -24,7 +24,7 @@ class ProfileController extends Controller
             ->select('artists.*')
             ->orderBy('artists.id', 'ASC')
             // ->WHERE('google_id', Auth::user()->google_id  )
-            ->WHERE('google_id', '104642348109057475179'  )
+            // ->WHERE('google_id', '104642348109057475179'  )
             ->get();
 
         for($i = 0; $i < count($saved_artists); $i++){
@@ -57,7 +57,7 @@ class ProfileController extends Controller
             ->orderBy('albums.id', 'ASC')
             // ->WHERE('google_id', Auth::user()->google_id  )
 
-            ->WHERE('google_id', '104642348109057475179'  )
+            // ->WHERE('google_id', '104642348109057475179'  )
             ->get();
 
         for($i = 0; $i < count($saved_albums); $i++){
